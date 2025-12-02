@@ -1,0 +1,41 @@
+<nav>
+  <p>Reuben Hu</p>
+  <div>
+    <a href="/">Home</a>
+    <!-- <a href="/blog">Blog</a> -->
+    <!-- <a href="/scribbles">Scribbles</a> -->
+    <!-- <a href="/portfolio">Portfolio</a> -->
+  </div>
+</nav>
+
+<style>
+  nav {
+    min-width: 100svh;
+    background-color: var(--blue-horizon);
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    filter: drop-shadow(rgba(0, 0, 0, 0.25) 0 0.1rem 0.5rem);
+  }
+  a,
+  p {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-weight: 400;
+    transition: ease-in-out 250ms;
+  }
+  p {
+    font-weight: 800;
+    font-stretch: semi-expanded;
+    max-width: fit-content;
+  }
+
+  a:hover {
+    font-stretch: expanded;
+    font-weight: 900;
+  }
+</style>

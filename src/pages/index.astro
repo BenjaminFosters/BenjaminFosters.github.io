@@ -1,0 +1,53 @@
+---
+import Base from "../layouts/base.astro";
+import SocialIcon from "../components/socialIcon.astro";
+import { Image } from "astro:assets";
+import benjiPhoto from "../image/core/benji.jpg";
+const pageTitle = "Home";
+---
+
+<Base pageTitle={pageTitle}>
+  <div class="container jumbotron">
+    <Image src={benjiPhoto} alt="Benji's Face" width="512" />
+    <h1>Hail the Blue Horizon!</h1>
+    <p>
+      Hej, I'm <b>Reuben Hu</b>! A Computer Science Student in BINUS University,
+      which also a <br /><i>self proclaimed</i> Linux Consultant, an Open Source
+      Enthusiast and also a Grizzly Furs.
+    </p>
+    <div class="socialIcons">
+      <SocialIcon
+        socialName="instagram"
+        socialURL="https://instagram.com/reuben.hu"
+        color="white"
+      />
+      <SocialIcon
+        socialName="unsplash"
+        socialURL="https://unsplash.com/reuben_hu"
+        color="white"
+      />
+      <SocialIcon
+        socialName="linkedin"
+        socialURL="https://www.linkedin.com/in/reubenhu"
+        color="white"
+      />
+      <SocialIcon
+        socialName="github"
+        socialURL="https://github.com/BenjaminFosters"
+        color="white"
+      />
+    </div>
+  </div>
+</Base>
+
+<style>
+  .socialIcons {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .jumbotron {
+    background-color: var(--blue-horizon);
+    color: white;
+  }
+</style>

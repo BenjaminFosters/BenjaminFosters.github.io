@@ -1,0 +1,14 @@
+---
+const { socialName, socialURL, color = "black", size = "2rem" } = Astro.props;
+import { Icon } from "astro-icon/components";
+---
+
+<a href={socialURL} target="_blank">
+  <Icon name={`simple-icons:${socialName}`} size={size} /></a
+>
+
+<style define:vars={{ color }}>
+  a {
+    color: var(--color);
+  }
+</style>
