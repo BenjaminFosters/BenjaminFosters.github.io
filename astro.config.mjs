@@ -1,5 +1,6 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, passthroughImageService } from 'astro/config';
+import tailwindcss from "@tailwindcss/vite";
 
 import icon from 'astro-icon';
 
@@ -7,4 +8,10 @@ import icon from 'astro-icon';
 export default defineConfig({
   integrations: [icon()],
   site: 'https://www.reubenhu.my.id',
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  image: {
+    service: passthroughImageService()
+  }
 });

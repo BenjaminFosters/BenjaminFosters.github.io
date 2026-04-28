@@ -2,52 +2,48 @@
 import Base from "../layouts/base.astro";
 import SocialIcon from "../components/socialIcon.astro";
 import { Image } from "astro:assets";
-import benjiPhoto from "../image/core/benji.jpg";
-const pageTitle = "Home";
+import photo from "../assets/benji.jpg";
 ---
 
-<Base pageTitle={pageTitle}>
-  <div class="container jumbotron">
-    <Image src={benjiPhoto} alt="Benji's Face" width="512" />
-    <h1>Hail the Blue Horizon!</h1>
-    <p>
-      Hej, I'm <b>Reuben Hu</b>! A Computer Science Student in BINUS University,
-      which also a <br /><i>self proclaimed</i> Linux Consultant, an Open Source
-      Enthusiast and also a Grizzly Furs.
-    </p>
-    <div class="socialIcons">
+<Base
+  descriptionSEO="A homepage of Reuben Hu's website, all of links in one place."
+>
+  <!-- Soon w/ lg:min-h-0 lg:py-32 -->
+  <div
+    class="flex flex-col justify-center items-center bg-linear-to-br from-slate-900 to-(--blue-horizon) p-8 min-h-svh text-center text-amber-50 space-y-8"
+  >
+    <Image
+      src={photo}
+      alt="Benji's Face"
+      class="rounded-full border-4 border-amber-50 size-48"
+    />
+    <div class="space-y-2">
+      <h1 class="font-header text-5xl/15">
+        Builds Greater Characters Since 2007
+      </h1>
+      <p>It's Me, Reuben Hu!</p>
+    </div>
+    <div class="flex flex-row justify-center gap-6">
       <SocialIcon
+        class="size-8 text-amber-50"
         socialName="instagram"
         socialURL="https://instagram.com/reuben.hu"
-        color="white"
       />
       <SocialIcon
+        class="size-8 text-amber-50"
         socialName="unsplash"
         socialURL="https://unsplash.com/reuben_hu"
-        color="white"
       />
       <SocialIcon
+        class="size-8 text-amber-50"
         socialName="linkedin"
         socialURL="https://www.linkedin.com/in/reubenhu"
-        color="white"
       />
       <SocialIcon
+        class="size-8 text-amber-50"
         socialName="github"
         socialURL="https://github.com/BenjaminFosters"
-        color="white"
       />
     </div>
   </div>
 </Base>
-
-<style>
-  .socialIcons {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-  }
-  .jumbotron {
-    background-color: var(--blue-horizon);
-    color: white;
-  }
-</style>

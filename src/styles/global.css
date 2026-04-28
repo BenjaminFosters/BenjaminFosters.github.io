@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import "./colors.css";
+
+@theme {
+  --font-header: "Instrument Serif", serif;
+}
+
+html {
+  font-family: "Mona Sans", sans-serif;
+}
