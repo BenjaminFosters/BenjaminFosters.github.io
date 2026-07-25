@@ -1,8 +1,0 @@
----
-const { socialName, socialURL, class: className } = Astro.props;
-import { Icon } from "astro-icon/components";
----
-
-<a href={socialURL} target="_blank" aria-label={socialName}>
-  <Icon name={`simple-icons:${socialName}`} class={className} />
-</a>

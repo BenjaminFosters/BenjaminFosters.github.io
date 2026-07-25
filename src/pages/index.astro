@@ -1,56 +1,17 @@
 ---
-import Base from "../layouts/base.astro";
-import SocialIcon from "../components/socialIcon.astro";
-import { Image } from "astro:assets";
+
 ---
 
-<Base
-  descriptionSEO="A homepage of Reuben Hu's website, all of links in one place."
->
-  <!-- Soon w/ lg:min-h-0 lg:py-32 -->
-  <div
-    class="flex flex-col justify-center items-center bg-linear-to-br from-slate-900 to-(--blue-horizon) p-8 min-h-svh text-center text-amber-50 space-y-8"
-  >
-    <Image
-      src="https://avatars.githubusercontent.com/u/61770462?v=4"
-      alt="Benji's Face"
-      class="rounded-full border-4 border-amber-50 size-48"
-      width={192}
-      height={192}
-    />
-    <div class="space-y-2">
-      <h1 class="font-header text-5xl/15">
-        #OpenToFoster since 2007
-      </h1>
-      <p>It's Me, Reuben Hu!</p>
-      <p>Computer Science Student | Open Source, Linux Infrastructure | UI/UX Designer</p>
-    </div>
-    <div class="flex flex-row justify-center gap-6">
-      <SocialIcon
-        class="size-8 text-amber-50"
-        socialName="instagram"
-        socialURL="https://instagram.com/reuben.hu"
-      />
-      <SocialIcon
-        class="size-8 text-amber-50"
-        socialName="mastodon"
-        socialURL="https://mastodon.social/@reubenhu"
-      />
-      <SocialIcon
-        class="size-8 text-amber-50"
-        socialName="unsplash"
-        socialURL="https://unsplash.com/reuben_hu"
-      />
-      <SocialIcon
-        class="size-8 text-amber-50"
-        socialName="linkedin"
-        socialURL="https://www.linkedin.com/in/reubenhu"
-      />
-      <SocialIcon
-        class="size-8 text-amber-50"
-        socialName="github"
-        socialURL="https://github.com/BenjaminFosters"
-      />
-    </div>
-  </div>
-</Base>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<h1>Astro</h1>
+	</body>
+</html>
