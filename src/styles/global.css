@@ -13,3 +13,15 @@ body {
 body {
   @apply bg-neutral-900 font-sans font-normal text-neutral-50;
 }
+
+h1 {
+  @apply text-4xl font-serif;
+}
+
+h2 {
+  @apply text-3xl font-serif;
+}
+
+a {
+  @apply underline;
+}
