@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Instrument Sans", system-ui, sans-serif;
+  --font-serif: "Instrument Serif", Georgia, serif;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  @apply bg-neutral-900 font-sans text-xs font-normal text-neutral-50;
+}

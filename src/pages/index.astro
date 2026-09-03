@@ -1,17 +1,164 @@
 ---
+import Layout from "../layouts/Layout.astro";
 
+const socials = [
+  { name: "GitHub", href: "https://github.com", icon: "/assets/icons/github.svg" },
+  { name: "LinkedIn", href: "https://linkedin.com", icon: "/assets/icons/linkedin.svg" },
+  { name: "Unsplash", href: "https://unsplash.com", icon: "/assets/icons/unsplash.svg" },
+  { name: "Instagram", href: "https://instagram.com", icon: "/assets/icons/instagram.svg" },
+  { name: "Mastodon", href: "https://mastodon.social", icon: "/assets/icons/mastodon.svg" },
+];
+
+const projects = [
+  {
+    category: "Programming",
+    title: "CommandBeep",
+    description:
+      "A Command Palette Extension for Beeper Messager, backed with Beeper Desktop API + OAuth 2.0 PKCE",
+    image: "/assets/commandbeep.png",
+  },
+  {
+    category: "UI/UX",
+    title: "Omah Lamita",
+    description: "A website concept for Malang-based MSME, in collaboration with TFI.",
+  },
+  {
+    category: "Graphic Design",
+    title: "HMFI Lanyard",
+    description: "A lanyard for a student focused, Indonesian based, furry fandom community.",
+  },
+  {
+    category: "Programming",
+    title: "Phonecho",
+    description: "A ridiculously simple, offline, browser-based NATO phonetics game.",
+  },
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Reuben Hu">
+  <div class="flex min-h-screen flex-col items-center bg-neutral-900 text-neutral-50">
+    <header
+      class="flex w-full items-center justify-between gap-6 whitespace-nowrap border-b border-neutral-700 px-6 py-3 text-xs md:px-36"
+    >
+      <p class="font-bold">Reuben Hu</p>
+      <nav class="flex items-center gap-6" aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contributions">Contributions</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section
+      id="home"
+      class="flex w-full flex-col items-start justify-between gap-12 overflow-hidden border-b border-neutral-700 px-6 py-18 md:flex-row md:items-center md:px-36"
+    >
+      <div class="flex flex-col gap-[18px]">
+        <div class="flex flex-col gap-3">
+          <h1 class="font-serif text-[30px] font-normal leading-normal">#OpenToFoster Since 2007</h1>
+          <p class="text-xs">
+            <strong>Computer Science Student</strong>, who just happen to be a
+            <strong>system tinkerer</strong> & a <strong>creative person</strong>.
+          </p>
+        </div>
+        <ul class="flex list-none gap-3 p-0">
+          {
+            socials.map((social) => (
+              <li>
+                <a href={social.href} aria-label={social.name}>
+                  <span class="block size-[30px] overflow-hidden">
+                    <img class="size-full" src={social.icon} alt="" width="30" height="30" />
+                  </span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="h-48 w-[300px] shrink-0 overflow-hidden border-[3px] border-neutral-50">
+        <img class="size-full object-cover" src="/assets/intro.jpg" alt="Portrait of Reuben Hu" width="300" height="192" />
+      </div>
+    </section>
+
+    <section
+      id="portfolio"
+      class="flex w-full flex-col gap-[18px] overflow-hidden border-b border-neutral-700 px-6 py-9 md:px-36"
+    >
+      <div class="flex flex-col gap-3">
+        <h2 class="font-serif text-[30px] font-normal leading-normal">My Works</h2>
+        <p class="text-xs">
+          Talk is Cheap, here’s my <strong>programs</strong>, and <strong>designs</strong>.
+          <a class="text-teal-300 underline" href="#portfolio">See more here, pamcakes included.</a>
+        </p>
+      </div>
+      <div class="flex w-full flex-col gap-6 md:flex-row">
+        {
+          projects.map((project) => (
+            <article class="flex min-w-0 flex-1 flex-col gap-2.5 overflow-hidden">
+              {project.image ? (
+                <div class="h-36 w-full overflow-hidden">
+                  <img class="size-full object-cover" src={project.image} alt="" width="300" height="144" />
+                </div>
+              ) : (
+                <div class="h-36 w-full bg-neutral-500" />
+              )}
+              <p class="overflow-hidden text-[9px] font-bold text-ellipsis whitespace-nowrap">{project.category}</p>
+              <h3 class="overflow-hidden font-serif text-2xl font-normal text-ellipsis whitespace-nowrap">
+                {project.title}
+              </h3>
+              <p class="text-xs leading-[18px]">{project.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </section>
+
+    <footer
+      id="contact"
+      class="flex w-full flex-col items-start justify-between gap-12 overflow-hidden px-6 py-9 md:flex-row md:px-36"
+    >
+      <div class="flex flex-col text-xs">
+        <h2 class="mb-3 font-serif text-[30px] font-normal leading-normal">Reuben Hu</h2>
+        <p class="leading-[18px]">Left Hand of Creativity.</p>
+        <p class="leading-[18px]">Right Hand of Technicality.</p>
+        <p class="h-[18px]"></p>
+        <p class="font-sans leading-[18px] italic">Right Hand of Doom is kinda overrated.</p>
+      </div>
+      <div class="flex flex-wrap gap-6">
+        <div>
+          <h3 class="mb-3 font-serif text-[21px] font-normal">Works</h3>
+          <ul class="flex flex-col gap-1.5 text-xs">
+            <li><a class="underline" href="https://github.com">GitHub</a></li>
+            <li><a class="underline" href="https://linkedin.com">LinkedIn</a></li>
+            <li><a class="underline" href="https://unsplash.com">Unsplash</a></li>
+            <li><a class="underline" href="#">CV/Resume</a></li>
+            <li><a class="underline" href="#">Creative Booklet</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mb-3 font-serif text-[21px] font-normal">Socials</h3>
+          <ul class="flex flex-col gap-1.5 text-xs">
+            <li><a class="underline" href="https://instagram.com">Instagram</a></li>
+            <li><a class="underline" href="https://mastodon.social">Mastodon</a></li>
+            <li><a class="underline" href="#">Discord</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mb-3 font-serif text-[21px] font-normal">Portfolio</h3>
+          <ul class="flex flex-col gap-1.5 text-xs">
+            <li><a class="underline" href="#portfolio">Programming</a></li>
+            <li><a class="underline" href="#portfolio">UI/UX</a></li>
+            <li><a class="underline" href="#portfolio">Graphic Design</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mb-3 font-serif text-[21px] font-normal">Contacts</h3>
+          <p class="text-xs">
+            <a class="underline" href="mailto:inbox@reubenhu.my.id">Email Inbox</a>
+          </p>
+          <p class="text-xs">(inbox@reubenhu.my.id)</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+</Layout>
