@@ -5,13 +5,24 @@
   --font-serif: "Instrument Serif", Georgia, serif;
 }
 
+/* Base */
+
+@layer base {
+  section {
+    @apply py-9 flex-col;
+
+    &.jumbo {
+      @apply py-18 flex-col-reverse md:flex-row;
+    }
+  }
+}
+
+/* Overrides */
+
 html,
 body {
   min-height: 100%;
-}
-
-body {
-  @apply bg-neutral-900 font-sans font-normal text-neutral-50;
+  @apply max-md:text-balance;
 }
 
 h1 {
@@ -24,4 +35,8 @@ h2 {
 
 a {
   @apply underline;
+}
+
+section {
+  @apply px-6 md:px-36 flex w-full gap-6 border-b border-neutral-700;
 }

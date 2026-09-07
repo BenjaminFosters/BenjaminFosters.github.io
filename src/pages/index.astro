@@ -32,21 +32,19 @@ const projects = [
 ---
 
 <Layout title="Reuben Hu">
-  <section
-    id="home"
-    class="flex w-full flex-col items-start justify-between gap-12 overflow-hidden border-b border-neutral-700 px-6 py-18 md:flex-row md:items-center md:px-36"
-  >
+  <section class="jumbo justify-between gap-12">
     <div class="flex flex-col gap-4">
       <h1>#OpenToFoster Since 2007</h1>
       <p>
-        <strong>Computer Science Student</strong>, who just happen to be a
-        <strong>system tinkerer</strong> & a <strong>creative person</strong>.
+        <strong>Computer Science Student</strong>, who just happen to be a <strong
+          >system tinkerer</strong
+        > & a <strong>creative person</strong>.
       </p>
       <ul class="flex list-none gap-3">
         {
           socials.map((social) => (
             <li>
-              <a href={social.href} aria-label={social.name}>
+              <a href={social.href} aria-label={social.name} target="_blank">
                 <span>
                   <img
                     class="size-8"
@@ -62,9 +60,7 @@ const projects = [
         }
       </ul>
     </div>
-    <div
-      class="h-48 w-[300px] shrink-0 overflow-hidden border-[3px] border-neutral-50"
-    >
+    <div class="h-48 overflow-hidden border-neutral-50 border-2">
       <img
         class="size-full object-cover"
         src="/assets/intro.jpg"
@@ -76,8 +72,7 @@ const projects = [
   </section>
 
   <section
-    id="portfolio"
-    class="flex w-full flex-col gap-[18px] overflow-hidden border-b border-neutral-700 px-6 py-9 md:px-36"
+    class="gap-6 overflow-hidden border-b border-neutral-700 px-6 py-9 md:px-36"
   >
     <div class="flex flex-col gap-4">
       <h1>My Works</h1>
@@ -94,19 +89,15 @@ const projects = [
       {
         projects.map((project) => (
           <article class="flex min-w-0 flex-1 flex-col gap-2.5 overflow-hidden">
-            {project.image ? (
-              <div class="h-36 w-full overflow-hidden">
-                <img
-                  class="size-full object-cover"
-                  src={project.image}
-                  alt=""
-                  width="300"
-                  height="144"
-                />
-              </div>
-            ) : (
-              <div class="h-36 w-full bg-neutral-500" />
-            )}
+            <div class="h-48 w-full overflow-hidden">
+              <img
+                class="size-full object-cover"
+                src={project.image}
+                alt=""
+                width="300"
+                height="1300"
+              />
+            </div>
             <p class="overflow-hidden text-xs font-bold text-ellipsis whitespace-nowrap">
               {project.category}
             </p>
