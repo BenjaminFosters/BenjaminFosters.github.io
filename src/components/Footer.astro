@@ -1,6 +1,7 @@
 ---
 import { socials } from "../data/socials";
 import { contacts } from "../data/contacts";
+import CopyrightInfo from "./CopyrightInfo.astro";
 ---
 
 <footer
@@ -9,20 +10,8 @@ import { contacts } from "../data/contacts";
 >
   <div class="flex flex-col">
     <h1 class="mb-3">Reuben Hu</h1>
-    <p>Building Characters to</p>
-    <p>Foster the World and Humanity</p>
-    <p class="text-xs">
-      <br />2026 &copy; Ruben Wealth Hu/Benjamin Foster Bearington.<br />
-      Content licensed to all of humanity under <a
-        href="https://creativecommons.org/licenses/by/4.0/"
-        target="_blank"
-        class="text-teal-300">CC BY 4.0</a
-      ><br />(unless otherwise stated) with code under <a
-        href="https://github.com/BenjaminFosters/BenjaminFosters.github.io/blob/main/LICENSE"
-        target="_blank"
-        class="text-teal-300">MIT</a
-      >.
-    </p>
+    <p>Professional Dumbass who just so happens to be a good person.</p>
+    <CopyrightInfo class="max-md:hidden" />
   </div>
   <div class="flex flex-wrap gap-6">
     <div>
@@ -72,6 +61,7 @@ import { contacts } from "../data/contacts";
       </p>
       <p>(@reubenhu:beeper.com)</p>
     </div> -->
+    <CopyrightInfo class="md:hidden" />
   </div>
 </footer>
 
