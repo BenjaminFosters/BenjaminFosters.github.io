@@ -1,3 +1,5 @@
+If you're looking for README I made: [README](README.md)
+
 # Astro Starter Kit: Minimal
 
 ```sh
