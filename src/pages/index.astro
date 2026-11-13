@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { socials } from "../data/socials.ts";
+import { getFeaturedWorks } from "../lib/featured";
+const works = await getFeaturedWorks();
 
 const projects = [
   {
@@ -83,24 +85,26 @@ const projects = [
       </p>
     </div>
     <div class="flex w-full flex-col gap-6 md:flex-row">
-      {projects.map((project) => (
+      {works.map((w) => (
         <article class="flex min-w-0 flex-1 flex-col gap-2.5 overflow-hidden">
           <div class="aspect-video w-full overflow-hidden">
             <img
               class="size-full object-cover"
-              src={project.image}
-              alt=""
+              src={w.data.cover.src}
+              alt={w.data.coverAlt}
               width="300"
               height="1300"
             />
           </div>
           <p class="overflow-hidden text-xs font-bold text-ellipsis whitespace-nowrap">
-            {project.category}
+            {w.data.type}
           </p>
-          <h2 class="overflow-hidden text-ellipsis whitespace-nowrap">
-            {project.title}
-          </h2>
-          <p class="line-clamp-3">{project.description}</p>
+          <a href={w.filePath}>
+            <h2 class="overflow-hidden text-ellipsis whitespace-nowrap">
+              {w.data.title}
+            </h2>
+          </a>
+          <p class="line-clamp-3">{w.data.description}</p>
         </article>
       ))}
     </div>
