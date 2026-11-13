@@ -6,7 +6,7 @@ export interface Contact {
 export const contacts: Contact[] = [
   {
     name: "Email Inbox",
-    href: "mailto:inbox@reubenhu.my.id",
+    href: "mailto:reuben.hu@proton.me",
   },
   {
     name: "Matrix @ Beeper",

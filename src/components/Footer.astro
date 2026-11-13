@@ -10,57 +10,34 @@ import CopyrightInfo from "./CopyrightInfo.astro";
 >
   <div class="flex flex-col">
     <h1 class="mb-3">Reuben Hu</h1>
-    <p>Professional Dumbass who just so happens to be a good person.</p>
+    <p>Fostering is admirable.</p>
     <CopyrightInfo class="max-md:hidden" />
   </div>
   <div class="flex flex-wrap gap-6">
     <div>
       <h2 class="mb-3">Socials</h2>
       <ul>
-        {
-          socials.map((social) => (
-            <li>
-              <a href={social.href} target="_blank">
-                {social.name}
-              </a>
-            </li>
-          ))
-        }
+        {socials.map((social) => (
+          <li>
+            <a href={social.href} target="_blank">
+              {social.name}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
     <div>
       <h2 class="mb-3">Contact</h2>
       <ul>
-        {
-          contacts.map((contact) => (
-            <li>
-              <a href={contact.href} target="_blank">
-                {contact.name}
-              </a>
-            </li>
-          ))
-        }
+        {contacts.map((contact) => (
+          <li>
+            <a href={contact.href} target="_blank">
+              {contact.name}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
-    <!-- <div>
-      <h2 class="mb-3">Portfolio</h2>
-      <ul>
-        <li><a href="#portfolio">Programming</a></li>
-        <li><a href="#portfolio">UI/UX</a></li>
-        <li><a href="#portfolio">Graphic Design</a></li>
-      </ul>
-    </div> -->
-    <!-- <div>
-      <h2 class="mb-3">Contacts</h2>
-      <p>
-        <a href="mailto:inbox@reubenhu.my.id">Email Inbox</a>
-      </p>
-      <p>(inbox@reubenhu.my.id)</p>
-      <p>
-        <a href="mailto:inbox@reubenhu.my.id">Matrix (at Beeper)</a>
-      </p>
-      <p>(@reubenhu:beeper.com)</p>
-    </div> -->
     <CopyrightInfo class="md:hidden" />
   </div>
 </footer>

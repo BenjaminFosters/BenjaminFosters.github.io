@@ -32,35 +32,8 @@ const projects = [
 ---
 
 <Layout title="Reuben Hu">
-  <section class="jumbo justify-between gap-12">
-    <div class="flex flex-col gap-4">
-      <h1>#OpenToFoster Since 2007</h1>
-      <p>
-        <strong>Computer Science Student</strong>, who just happen to be a <strong
-          >system tinkerer</strong
-        > & a <strong>creative person</strong>.
-      </p>
-      <ul class="flex list-none gap-3">
-        {
-          socials.map((social) => (
-            <li>
-              <a href={social.href} aria-label={social.name} target="_blank">
-                <span>
-                  <img
-                    class="size-8"
-                    src={social.icon}
-                    alt={social.name}
-                    width="64"
-                    height="64"
-                  />
-                </span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-    <div class="h-48 overflow-hidden border-neutral-50 border-2">
+  <section class="jumbo gap-12">
+    <div class="md:h-48 overflow-hidden border-neutral-50 border-2">
       <img
         class="size-full object-cover"
         src="/assets/intro.jpg"
@@ -69,45 +42,67 @@ const projects = [
         height="192"
       />
     </div>
+    <div class="flex flex-col gap-4">
+      <h1>
+        Student, Builder, and Creator. <br />
+        <!-- <i>For the Good of People.</i> -->
+      </h1>
+      <p>
+        I'm Reuben Hu, a computer science student at BINUS University.
+        <br />A self-taught learner in Linux and networking, and an occasional
+        open-source contributor.
+      </p>
+      <ul class="flex list-none gap-3">
+        {socials.map((social) => (
+          <li>
+            <a href={social.href} aria-label={social.name} target="_blank">
+              <span>
+                <img
+                  class="size-8"
+                  src={social.icon}
+                  alt={social.name}
+                  width="64"
+                  height="64"
+                />
+              </span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
   </section>
 
-  <section
-    class="gap-6 overflow-hidden border-b border-neutral-700 px-6 py-9 md:px-36"
-  >
+  <section class="gap-6 overflow-hidden border-b border-neutral-700 px-6 py-9 md:px-36">
     <div class="flex flex-col gap-4">
       <h1>My Works</h1>
       <p>
-        Talk is Cheap, here’s my <strong>programs</strong>, and <strong
-          >designs</strong
-        >.&nbsp
+        Building one step at a time.{" "}
         <a class="text-teal-300 underline" href="#portfolio">
-          See more here, pamcakes included.</a
-        >
+          See more here.
+        </a>
       </p>
     </div>
     <div class="flex w-full flex-col gap-6 md:flex-row">
-      {
-        projects.map((project) => (
-          <article class="flex min-w-0 flex-1 flex-col gap-2.5 overflow-hidden">
-            <div class="h-48 w-full overflow-hidden">
-              <img
-                class="size-full object-cover"
-                src={project.image}
-                alt=""
-                width="300"
-                height="1300"
-              />
-            </div>
-            <p class="overflow-hidden text-xs font-bold text-ellipsis whitespace-nowrap">
-              {project.category}
-            </p>
-            <h2 class="overflow-hidden text-ellipsis whitespace-nowrap">
-              {project.title}
-            </h2>
-            <p class="line-clamp-3">{project.description}</p>
-          </article>
-        ))
-      }
+      {projects.map((project) => (
+        <article class="flex min-w-0 flex-1 flex-col gap-2.5 overflow-hidden">
+          <div class="aspect-video w-full overflow-hidden">
+            <img
+              class="size-full object-cover"
+              src={project.image}
+              alt=""
+              width="300"
+              height="1300"
+            />
+          </div>
+          <p class="overflow-hidden text-xs font-bold text-ellipsis whitespace-nowrap">
+            {project.category}
+          </p>
+          <h2 class="overflow-hidden text-ellipsis whitespace-nowrap">
+            {project.title}
+          </h2>
+          <p class="line-clamp-3">{project.description}</p>
+        </article>
+      ))}
     </div>
   </section>
 </Layout>

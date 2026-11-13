@@ -12,7 +12,7 @@
     @apply py-9 flex-col;
 
     &.jumbo {
-      @apply py-18 flex-col-reverse md:flex-row;
+      @apply py-18 flex-col-reverse md:items-center md:flex-row;
     }
   }
 }
