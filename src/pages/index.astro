@@ -30,7 +30,12 @@ import { CustomIcons, type IconName } from "../lib/icons.ts";
       <ul class="flex list-none gap-3">
         {socials.map((social) => (
           <li>
-            <a href={social.href} aria-label={social.name} target="_blank">
+            <a
+              href={social.href}
+              aria-label={social.name}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span>
                 <span
                   class="inline-flex h-10 w-10 [&>svg]:h-full [&>svg]:w-full"
@@ -70,7 +75,7 @@ import { CustomIcons, type IconName } from "../lib/icons.ts";
           <p class="overflow-hidden text-xs font-bold text-ellipsis whitespace-nowrap">
             {work.data.type}
           </p>
-          <a href={work.filePath}>
+          <a href={`/works/${work.id}`} class="no-underline">
             <h2 class="overflow-hidden text-ellipsis whitespace-nowrap">
               {work.data.title}
             </h2>
