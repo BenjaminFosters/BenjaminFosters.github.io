@@ -57,26 +57,26 @@ const works = await getFeaturedWorks();
       </p>
     </div>
     <div class="flex w-full flex-col gap-6 md:flex-row">
-      {works.map((w) => (
+      {works.map((work) => (
         <article class="flex min-w-0 flex-1 flex-col gap-2.5 overflow-hidden">
           <div class="aspect-video w-full overflow-hidden">
             <img
               class="size-full object-cover"
-              src={w.data.cover.src}
-              alt={w.data.coverAlt}
-              width="300"
-              height="1300"
+              src={work.data.cover.src}
+              alt={work.data.coverAlt}
+              width={work.data.cover.width}
+              height={work.data.cover.height}
             />
           </div>
           <p class="overflow-hidden text-xs font-bold text-ellipsis whitespace-nowrap">
-            {w.data.type}
+            {work.data.type}
           </p>
-          <a href={w.filePath}>
+          <a href={work.filePath}>
             <h2 class="overflow-hidden text-ellipsis whitespace-nowrap">
-              {w.data.title}
+              {work.data.title}
             </h2>
           </a>
-          <p class="line-clamp-3">{w.data.description}</p>
+          <p class="line-clamp-3">{work.data.description}</p>
         </article>
       ))}
     </div>
