@@ -1,0 +1,36 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = async () => {
+  const works = await getCollection("works");
+  return works.map((work) => ({
+    params: { id: work.id },
+    props: { work },
+  }));
+};
+
+const { work } = Astro.props;
+const { Content } = await render(work);
+---
+
+<Layout title={`${work.data.title} | Reuben Hu`}>
+  <section class="jumbo gap-12 justify-between">
+    <div class="flex flex-col gap-4">
+      <h1>{work.data.title}</h1>
+      <p>{work.data.description}</p>
+    </div>
+    <div class="md:h-48 overflow-hidden border-neutral-50 border-2">
+      <img
+        class="size-full object-cover"
+        src={work.data.cover.src}
+        alt={work.data.coverAlt}
+        width={work.data.cover.width}
+        height={work.data.cover.height}
+      />
+    </div>
+  </section>
+  <section class="gap-6 overflow-hidden border-b border-neutral-700 px-6 py-9 md:px-36">
+    <Content />
+  </section>
+</Layout>
