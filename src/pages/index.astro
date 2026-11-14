@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import { socials } from "../data/socials.ts";
 import { getFeaturedWorks } from "../lib/featured";
 const works = await getFeaturedWorks();
+import { CustomIcons, type IconName } from "../lib/icons.ts";
 ---
 
 <Layout title="Reuben Hu" description="A website of Reuben Hu">
@@ -31,12 +32,10 @@ const works = await getFeaturedWorks();
           <li>
             <a href={social.href} aria-label={social.name} target="_blank">
               <span>
-                <img
-                  class="size-8"
-                  src={social.icon}
-                  alt={social.name}
-                  width="64"
-                  height="64"
+                <span
+                  class="inline-flex h-10 w-10 [&>svg]:h-full [&>svg]:w-full"
+                  aria-hidden="true"
+                  set:html={CustomIcons[social.name.toLowerCase()]}
                 />
               </span>
             </a>

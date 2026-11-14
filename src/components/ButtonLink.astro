@@ -1,0 +1,32 @@
+---
+import { CustomIcons, type IconName } from "../lib/icons";
+
+interface Props {
+  label: string;
+  url: string;
+  primary?: boolean;
+  icon: IconName;
+}
+
+const { label, url, primary = false, icon } = Astro.props;
+
+const variant = primary
+  ? "bg-teal-300 text-neutral-900 border-teal-300"
+  : "bg-transparent text-teal-300";
+---
+
+<a
+  class="flex no-underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-300"
+  href={url}
+  target="_blank"
+  rel="noopener"
+>
+  <div class={`flex items-center gap-2 border-2 px-4 py-2 ${variant}`}>
+    <span
+      class="inline-flex h-6 w-6 [&>svg]:h-full [&>svg]:w-full"
+      aria-hidden="true"
+      set:html={CustomIcons[icon]}
+    />
+    <span>{label}</span>
+  </div>
+</a>
