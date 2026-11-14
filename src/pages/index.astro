@@ -3,34 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import { socials } from "../data/socials.ts";
 import { getFeaturedWorks } from "../lib/featured";
 const works = await getFeaturedWorks();
-
-const projects = [
-  {
-    category: "Programming",
-    title: "CommandBeep",
-    description:
-      "A Command Palette Extension for Beeper Messager, backed with Beeper Desktop API + OAuth 2.0 PKCE",
-    image: "/assets/commandbeep.png",
-  },
-  {
-    category: "UI/UX",
-    title: "Omah Lamita",
-    description:
-      "A website concept for Malang-based MSME, in collaboration with TFI.",
-  },
-  {
-    category: "Graphic Design",
-    title: "HMFI Lanyard",
-    description:
-      "A lanyard for a student focused, Indonesian based, furry fandom community.",
-  },
-  {
-    category: "Programming",
-    title: "Phonecho",
-    description:
-      "A ridiculously simple, offline, browser-based NATO phonetics game.",
-  },
-];
 ---
 
 <Layout title="Reuben Hu">
