@@ -33,7 +33,7 @@ h2 {
   @apply text-3xl font-serif;
 }
 
-a {
+a:not(.no-underline) {
   @apply underline;
 }
 
