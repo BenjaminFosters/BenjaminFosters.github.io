@@ -39,7 +39,6 @@ const works = defineCollection({
             }),
           )
           .default([]),
-        license: z.string().default("No License Specified"),
         cover: image(),
         coverAlt: z.string().max(140),
         featured: z.boolean().default(false),
