@@ -17,7 +17,7 @@ const works = defineCollection({
     return z.object({
       title: z.string(),
       description: z.string(),
-      acknowledgement: z.string().optional(),
+      acknowledgements: z.string().optional(),
       type: z.enum(["Software", "Graphic Design", "UI/UX"]),
       links: z
         .array(z.object({ label: z.string(), url: z.string().url() }))
