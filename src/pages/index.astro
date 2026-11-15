@@ -61,7 +61,10 @@ import { CustomIcons, type IconName } from "../lib/icons.ts";
     <div class="flex w-full flex-col gap-6 md:flex-row">
       {works.map((work) => (
         <article class="flex min-w-0 flex-1 flex-col gap-2.5 overflow-hidden">
-          <div class="aspect-video w-full overflow-hidden">
+          <a
+            class="aspect-video w-full overflow-hidden"
+            href={`/works/${work.id}`}
+          >
             <img
               class="size-full object-cover"
               src={work.data.cover.src}
@@ -69,7 +72,7 @@ import { CustomIcons, type IconName } from "../lib/icons.ts";
               width={work.data.cover.width}
               height={work.data.cover.height}
             />
-          </div>
+          </a>
           <p class="overflow-hidden text-xs font-bold text-ellipsis whitespace-nowrap">
             {work.data.type}
           </p>
