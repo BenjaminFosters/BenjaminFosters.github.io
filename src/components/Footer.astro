@@ -19,7 +19,12 @@ import CopyrightInfo from "./CopyrightInfo.astro";
       <ul>
         {socials.map((social) => (
           <li>
-            <a href={social.href} target="_blank" rel="noopener noreferrer">
+            <a
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="no-underline"
+            >
               {social.name}
             </a>
           </li>
@@ -31,7 +36,12 @@ import CopyrightInfo from "./CopyrightInfo.astro";
       <ul>
         {contacts.map((contact) => (
           <li>
-            <a href={contact.href} target="_blank" rel="noopener noreferrer">
+            <a
+              href={contact.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="no-underline"
+            >
               {contact.name}
             </a>
           </li>

@@ -34,7 +34,7 @@ h2 {
 }
 
 a:not(.no-underline) {
-  @apply underline;
+  @apply underline text-teal-300;
 }
 
 section {
