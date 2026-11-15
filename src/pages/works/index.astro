@@ -1,0 +1,46 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection } from "astro:content";
+import { CustomIcons, type IconName } from "../../lib/icons.ts";
+
+const works = await getCollection("works");
+---
+
+<Layout title="Reuben Hu" description="A website of Reuben Hu">
+  <section class="jumbo flex-col gap-4 text-center">
+    <h1>All of My Works.</h1>
+    <p>
+      Learning by Breaking and Building. <i>It builds Character, right?</i>
+    </p>
+  </section>
+
+  <section class="gap-6 overflow-hidden border-b border-neutral-700 px-6 py-9 md:px-36">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 md:flex-row">
+      {works.map((work) => (
+        <article class="flex min-w-0 flex-1 flex-col gap-2.5 overflow-hidden">
+          <a
+            class="aspect-video w-full overflow-hidden"
+            href={`/works/${work.id}`}
+          >
+            <img
+              class="size-full object-cover"
+              src={work.data.cover.src}
+              alt={work.data.coverAlt}
+              width={work.data.cover.width}
+              height={work.data.cover.height}
+            />
+          </a>
+          <p class="overflow-hidden text-xs font-bold text-ellipsis whitespace-nowrap">
+            {work.data.type}
+          </p>
+          <a href={`/works/${work.id}`} class="no-underline">
+            <h2 class="overflow-hidden text-ellipsis whitespace-nowrap">
+              {work.data.title}
+            </h2>
+          </a>
+          <p class="line-clamp-3">{work.data.description}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
